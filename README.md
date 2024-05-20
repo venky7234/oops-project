@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Base class Person
+
 class Person {
     private String id;
     private String name;
@@ -11,7 +11,7 @@ class Person {
         this.name = name;
     }
 
-    // Getter and Setter methods
+    
     public String getId() {
         return id;
     }
@@ -29,7 +29,7 @@ class Person {
     }
 }
 
-// Student class extending Person
+
 class Student extends Person {
     private List<Course> courses;
     private List<String> grades;
@@ -40,18 +40,17 @@ class Student extends Person {
         this.grades = new ArrayList<>();
     }
 
-    // Enroll in a course
+    
     public void enrollCourse(Course course) {
         courses.add(course);
         course.enrollStudent(this);
     }
 
-    // Add a grade
     public void addGrade(String grade) {
         grades.add(grade);
     }
 
-    // Getter methods
+    
     public List<Course> getCourses() {
         return courses;
     }
@@ -61,7 +60,7 @@ class Student extends Person {
     }
 }
 
-// Teacher class extending Person
+
 class Teacher extends Person {
     private List<Course> courses;
 
@@ -70,13 +69,13 @@ class Teacher extends Person {
         this.courses = new ArrayList<>();
     }
 
-    // Assign a course
+   
     public void assignCourse(Course course) {
         courses.add(course);
         course.assignTeacher(this);
     }
 
-    // Getter method
+    
     public List<Course> getCourses() {
         return courses;
     }
@@ -95,17 +94,17 @@ class Course {
         this.students = new ArrayList<>();
     }
 
-    // Enroll a student
+   
     public void enrollStudent(Student student) {
         students.add(student);
     }
 
-    // Assign a teacher
+   
     public void assignTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 
-    // Getter methods
+    
     public String getCourseId() {
         return courseId;
     }
@@ -123,7 +122,7 @@ class Course {
     }
 }
 
-// Main class to demonstrate the project
+
 class Main {
     public static void main(String[] args) {
         // Create students
@@ -142,12 +141,12 @@ class Main {
         teacher1.assignCourse(course1);
         teacher2.assignCourse(course2);java
 
-        // Enroll students in courses
+        
         student1.enrollCourse(course1);
         student2.enrollCourse(course1);
         student2.enrollCourse(course2);
 
-        // Add grades
+       
         student1.addGrade("A");
         student2.addGrade("B");
         student2.addGrade("A");
